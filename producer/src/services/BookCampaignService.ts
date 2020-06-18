@@ -8,12 +8,8 @@ export class BookCampaignService {
             clientId: 'producer',
             brokers: ['localhost:9092']
         })
-
-        this.producer = kafka.producer()
-        this.producer.connect()
     }
 
     async bookCampaign() {
-        await this.producer.send({topic: 'campaign-booking',messages: [{key: "123", value: 'test'}]});
     }   
 }
